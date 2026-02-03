@@ -11,25 +11,25 @@ int main() {
     char *y = &b;
     int **z = &x;
     
-    auto printValues = [&]() {
+    auto print = [&]() {
         cout << a << " " << b << " " << c << " " << x << " " << (void*)y << " " << z << endl;
     };
 
-    printValues();
+    print();
 
     cout << &a << " " << (void*)&b << " " << (void*)&c << " " << &x << " " << &y << " " << &z << endl;
 
     c = 'F';
-    printValues();
+    print();
 
     *y = 'W';
-    printValues();
+    print();
 
     *x = 6;
-    printValues();
+    print();
 
     **z = 7;
-    printValues();
+    print();
 
     return 0;
 }
